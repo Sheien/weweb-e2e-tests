@@ -9,6 +9,6 @@
   "devDependencies": {
     "@playwright/test": "^1.51.1",
     "@types/node": "^22.14.0",
-    "serve": "^15.0.1"
+    "serve": "^14.2.0"
   }
 }
