@@ -23,3 +23,4 @@ This repository contains end-to-end (E2E) tests for the Smart Content Management
 ├── playwright-report/       # Test report folder (generated)
 ├── .github/workflows/       # GitHub Actions CI pipeline
 │   └── playwright.yml
+ECHO is on.
