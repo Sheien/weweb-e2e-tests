@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "npx serve ."
+    "dev": "serve ./",
+    "test": "npx playwright test"
   },
   "keywords": [],
   "author": "",

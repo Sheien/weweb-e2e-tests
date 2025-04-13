@@ -1,19 +1,25 @@
-// playwright.config.js
-import { defineConfig } from '@playwright/test';
+// @ts-check
+const { defineConfig } = require('@playwright/test');
 
-export default defineConfig({
+module.exports = defineConfig({
   testDir: './tests',
-  timeout: 30 * 1000,
+  timeout: 30000,
+  expect: {
+    timeout: 5000
+  },
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
   retries: 0,
+  workers: 1,
+  reporter: 'html',
   use: {
+    actionTimeout: 0,
     baseURL: 'http://localhost:3000',
-    browserName: 'chromium',
-    headless: true,
+    trace: 'on-first-retry',
   },
   webServer: {
     command: 'npm run dev',
-    url: 'http://localhost:3000',
-    timeout: 120 * 1000,
+    port: 3000,
     reuseExistingServer: !process.env.CI,
   },
 });
