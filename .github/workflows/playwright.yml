@@ -24,7 +24,9 @@ jobs:
       run: npm install
 
     - name: Install Playwright Browsers
-      run: node ./node_modules/@playwright/test/cli.js install --with-deps
-  
+    run: npx playwright install --with-deps
+    env:
+      PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS: true
+     
     - name: Run Playwright Tests
       run: npx playwright test
