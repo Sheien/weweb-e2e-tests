@@ -2,13 +2,14 @@
   "name": "weweb-e2e-tests",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "dev": "npx serve .",
-    "test": "npx playwright test"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.x.x",
-    "@types/node": "^22.14.0",
-    "serve": "^14.2.0"
-  }
+"scripts": {
+  "dev": "npx serve .",
+  "test": "playwright test",
+  "install:playwright": "playwright install --with-deps"
+},
+"devDependencies": {
+  "@playwright/test": "^1.x.x",
+  "@types/node": "^22.14.0",
+  "serve": "^14.2.0"
+}
 }
