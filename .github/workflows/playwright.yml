@@ -15,18 +15,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - name: List repo contents for debugging
+        run: |
+          echo "Top-level directory:"
+          ls -al
+          echo "sample-files directory:"
+          ls -al sample-files || echo "sample-files missing"
 
       - name: Install dependencies
         run: npm ci
 
       - name: Install Playwright Browsers
-        run: npx --package=@playwright/test playwright install --with-deps
-        env:
-          PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS: true
+        run: npx playwright install --with-deps
 
       - name: Run Playwright Tests
-        run: npm test
+        run: npx playwright test
